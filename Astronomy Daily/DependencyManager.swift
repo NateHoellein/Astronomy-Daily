@@ -13,4 +13,8 @@ class DependencyManager {
     
     var container: Container!
     private init() { }
+    
+    func resolve<T>(_ serviceType:T.Type) -> T {
+        return container.resolve(serviceType)!
+    }
 }

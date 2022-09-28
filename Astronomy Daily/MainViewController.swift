@@ -22,8 +22,9 @@ class MainViewController: UIViewController {
     var viewModel: MainViewModel
    
     required init?(coder: NSCoder) {
-        let storage: StorageProtocol = DependencyManager.shared.container.resolve(StorageProtocol.self)!
-        let network: NetworkProtocol = DependencyManager.shared.container.resolve(NetworkProtocol.self)!
+        let storage: StorageProtocol = DependencyManager.shared.resolve(StorageProtocol.self)
+        let network: NetworkProtocol = DependencyManager.shared.resolve(NetworkProtocol.self)
+        
         self.viewModel = MainViewModel(network: network, storage: storage)
         self.titleLabel = UILabel(frame: .zero)
         self.dateLabel = UILabel(frame: .zero)
