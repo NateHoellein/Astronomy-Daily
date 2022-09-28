@@ -2,6 +2,8 @@
 
 Sample app to show the Astronomy Picture Of The Day (LINK)
 
+![App Sample](documentation/AppImage.jpg)
+
 Requirements:
 1. On launch query with a count of 5 to get random image
     - Query to include concept tags
