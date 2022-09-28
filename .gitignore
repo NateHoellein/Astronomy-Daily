@@ -1,1 +1,6 @@
-**.xcuserstate
+## Build generated
+build/
+DerivedData/
+
+## User Settings
+xcuserdata/
