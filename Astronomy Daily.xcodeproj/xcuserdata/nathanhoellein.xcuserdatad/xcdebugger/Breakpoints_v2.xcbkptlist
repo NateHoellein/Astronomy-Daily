@@ -14,9 +14,9 @@
             filePath = "Astronomy Daily/ViewModel/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "init()"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "init(network:storage:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

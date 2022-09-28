@@ -21,6 +21,8 @@
 		B8F7CCF528DF7AAF00F2CE8F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7CCF428DF7AAF00F2CE8F /* MainViewModel.swift */; };
 		B8F7CCF828DF9C3F00F2CE8F /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7CCF728DF9C3F00F2CE8F /* ImageDetailViewController.swift */; };
 		B8F7CCFA28E08CE300F2CE8F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7CCF928E08CE300F2CE8F /* Storage.swift */; };
+		B8F7CCFD28E5027E00F2CE8F /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B8F7CCFC28E5027E00F2CE8F /* Swinject */; };
+		B8F7CD0128E502A400F2CE8F /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7CD0028E502A400F2CE8F /* DependencyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		B8F7CCF428DF7AAF00F2CE8F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B8F7CCF728DF9C3F00F2CE8F /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		B8F7CCF928E08CE300F2CE8F /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B8F7CD0028E502A400F2CE8F /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F7CCFD28E5027E00F2CE8F /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +125,7 @@
 				B8F7CCC628DF47B200F2CE8F /* Assets.xcassets */,
 				B8F7CCC828DF47B200F2CE8F /* LaunchScreen.storyboard */,
 				B8F7CCCB28DF47B200F2CE8F /* Info.plist */,
+				B8F7CD0028E502A400F2CE8F /* DependencyManager.swift */,
 			);
 			path = "Astronomy Daily";
 			sourceTree = "<group>";
@@ -190,6 +195,9 @@
 			dependencies = (
 			);
 			name = "Astronomy Daily";
+			packageProductDependencies = (
+				B8F7CCFC28E5027E00F2CE8F /* Swinject */,
+			);
 			productName = "Astronomy Daily";
 			productReference = B8F7CCBA28DF47B000F2CE8F /* Astronomy Daily.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +270,9 @@
 				Base,
 			);
 			mainGroup = B8F7CCB128DF47B000F2CE8F;
+			packageReferences = (
+				B8F7CCFB28E5027E00F2CE8F /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = B8F7CCBB28DF47B000F2CE8F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -312,6 +323,7 @@
 				B8F7CCF028DF652F00F2CE8F /* Network.swift in Sources */,
 				B8F7CCFA28E08CE300F2CE8F /* Storage.swift in Sources */,
 				B8F7CCC028DF47B000F2CE8F /* SceneDelegate.swift in Sources */,
+				B8F7CD0128E502A400F2CE8F /* DependencyManager.swift in Sources */,
 				B8F7CCF528DF7AAF00F2CE8F /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +668,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8F7CCFB28E5027E00F2CE8F /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8F7CCFC28E5027E00F2CE8F /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8F7CCFB28E5027E00F2CE8F /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B8F7CCB228DF47B000F2CE8F /* Project object */;
 }

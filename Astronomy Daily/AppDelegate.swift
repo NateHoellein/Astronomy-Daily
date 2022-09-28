@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        DependencyManager.shared.container = {
+            let container = Container()
+            
+            container.register(StorageProtocol.self, factory: { _ in Storage()})
+            container.register(NetworkProtocol.self, factory: { _ in Network()})
+            
+            return container
+        }()
+        
         return true
     }
 

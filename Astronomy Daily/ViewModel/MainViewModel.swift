@@ -24,9 +24,10 @@ class MainViewModel {
     private var viewingIndex: Int = 0
     var dataSaved = false
     
-    init() {
-        network = Network()
-        storage = Storage()
+    init(network: NetworkProtocol,
+         storage: StorageProtocol) {
+        self.network = network
+        self.storage = storage
         
         if let data = storage.getSavedData() {
             title = data.title
