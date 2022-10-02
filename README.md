@@ -1,23 +1,26 @@
 # Astronomy Daily
 
-Sample app to show the Astronomy Picture Of The Day (LINK)
+Sample app to show the Astronomy Picture Of The Day 
 
 ![App Sample](documentation/AppImage.jpg)
 
 Requirements:
 1. On launch query with a count of 5 to get random image
-    - Query to include concept tags
     - If title is empty, use app name as title
-    - Description is tappable to show full test in modal type screen
-2. Swipe left/right go through list of initial 5 or get new 5 if today is selected
-    - Update all fields
-3. Settings Button
+    - Query to include concept tags
+2. Swipe left/right go through list
+    - Update all fields on swipe
+    - Get 5 new images once swipped past initial list
+3. Save random image and set as initial data on re-launch of app
+    - If no data saved, used initial defaults
+4. Settings Button
     - Option to show today's image
     - querystring to include date
-4. Button to get random image
+5. Button to get random image
     - querystring changes
-5. Image support zooming or tap to launch in separate VC and support zooming?
-6. If image is a video, show thumbnail and tap does what?
-7. Option menu to save image as default
-8. Show video when media_type is "video"
-9. Add copyright symbol to author
+6. Image support zooming or tap to launch in separate VC and support zooming?
+7. If image is a video, show thumbnail and tap does what?
+8. Option menu to save image as default
+9. Show video when media_type is "video"
+10. Add copyright symbol to author
+11. Images are not scaled right
