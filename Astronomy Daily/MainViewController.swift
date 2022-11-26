@@ -232,7 +232,7 @@ class MainViewController: UIViewController {
         let scaledImage = renderer.image { _ in
             image.draw(in: CGRect(origin: .zero, size: scaledImageSize))
         }
-        imageView.image = image
+        imageView.image = scaledImage
     }
 }
 
