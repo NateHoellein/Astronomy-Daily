@@ -149,6 +149,11 @@ class MainViewController: UIViewController {
             description.bottomAnchor.constraint(equalTo: descriptionView.bottomAnchor, constant: -10.0),
         ])
         
+        imageView.addConstraints([
+            imageView.heightAnchor.constraint(equalToConstant: 300),
+            imageView.widthAnchor.constraint(greaterThanOrEqualToConstant: 300)
+        ])
+        
         let copyrightView = UIView(frame: .zero)
         copyrightView.translatesAutoresizingMaskIntoConstraints = false
         copyrightView.addSubview(copyrightLabel)
@@ -212,27 +217,22 @@ class MainViewController: UIViewController {
         guard let image = image else {
             return
         }
-        let sideLength = min(
-            image.size.width,
-            image.size.height
+        let widthRatio = image.size.width / image.size.height
+        let heightRatio = image.size.height / image.size.width
+        
+        let scaleFactor = min(
+            widthRatio,
+            heightRatio
         )
         
-        let sourceSize = image.size
-        let xOffset = (sourceSize.width - sideLength) / 2.0
-        let yOffset = (sourceSize.height - sideLength) / 2.0
-        
-        let cropRect = CGRect(
-            x: xOffset,
-            y: yOffset,
-            width: sideLength,
-            height: sideLength
-        ).integral
-        
-        let sourceCGImage = image.cgImage!
-        let croppedCGImage = sourceCGImage.cropping(
-            to: cropRect
-        )!
-        imageView.image = UIImage(cgImage: croppedCGImage)
+        let scaledImageSize = CGSize(width: image.size.width * scaleFactor,
+                                     height: image.size.height * scaleFactor)
+            
+        let renderer = UIGraphicsImageRenderer(size: scaledImageSize)
+        let scaledImage = renderer.image { _ in
+            image.draw(in: CGRect(origin: .zero, size: scaledImageSize))
+        }
+        imageView.image = scaledImage
     }
 }
 
